@@ -15,7 +15,8 @@ export default function news(props) {
 export async function getServerSideProps() {
     const news = await axios.get("http://localhost:4000/news");
     const newsDtat = news.data;
-    console.log(newsDtat);
+    // console.log(newsDtat);
+    console.log("SSR in news category")
     return {
         props: {
             newsDtat

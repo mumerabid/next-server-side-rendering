@@ -14,11 +14,15 @@ export default function NewByCategory(props) {
 }
 
 export async function getServerSideProps(context) {
-    const { params } = context;
-    console.log(params);
+    const { params, req, res, query } = context;
+    console.log(query)
+    // console.log(req.headers.cookie)
+    // console.log(params);
+    res.setHeader('Set-Cookie', ['name=umer'])
     const news = await axios.get(`http://localhost:4000/news?category=${params.category}`);
     const newsData = news.data;
-    console.log(newsData);
+    // console.log(newsData);
+    console.log("SSR in news sub-category")
     return {
         props: {
             newsData

@@ -38,5 +38,11 @@
       "description": "description 3",
       "price": "300"
     }
-  ]
+  ],
+  "dashboard": {
+    "posts": 5,
+    "likes": 100,
+    "followers": 100,
+    "following": 20
+  }
 }
